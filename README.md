@@ -1,4 +1,4 @@
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github.com/jdgamble555/qwik-universal-menu)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github.com/jdgamble555/qwik-universal-menu?file=src%2Fcomponents%2Fuser-menu.tsx)
 
 For more info, see [Code.Build](https://code.build/p/RUGSxMmSnVizh6UTBoSJ17/building-a-custom-menu-hook-with-qwik)!
 ___
