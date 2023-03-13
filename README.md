@@ -1,3 +1,8 @@
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://github.com/jdgamble555/qwik-universal-menu)
+
+For more info, see [Code.Build](https://code.build/p/RUGSxMmSnVizh6UTBoSJ17/building-a-custom-menu-hook-with-qwik)!
+___
+
 # Qwik City App ⚡️
 
 - [Qwik Docs](https://qwik.builder.io/)
