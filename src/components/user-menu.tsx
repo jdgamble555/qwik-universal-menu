@@ -6,17 +6,15 @@ import { MenuItem } from '~/tw-components/menu-item';
 export default component$(() => {
     const menu = useMenu('user-menu');
     return (
-        <div>
-            <Menu>
-                <MenuItem>Your Profile</MenuItem>
-                <MenuItem>Settings</MenuItem>
-                <MenuItem>Logout</MenuItem>
-                <MenuItem>
-                    <button onClick$={() => menu.toggle()}>
-                        Close
-                    </button>
-                </MenuItem>
-            </Menu>
-        </div>
+        <Menu>
+            <MenuItem>Your Profile</MenuItem>
+            <MenuItem>Settings</MenuItem>
+            <MenuItem>Logout</MenuItem>
+            <MenuItem>
+                <button class="w-full text-left" onClick$={() => menu.toggle()}>
+                    Close
+                </button>
+            </MenuItem>
+        </Menu>
     );
 });
