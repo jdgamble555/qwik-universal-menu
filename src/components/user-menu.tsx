@@ -1,10 +1,11 @@
 import { component$ } from '@builder.io/qwik';
-import { useMenu } from '~/hooks/useMenu';
-import { Menu } from '~/tw-components/menu';
-import { MenuItem } from '~/tw-components/menu-item';
+import { useMobileMenu } from '~/hooks/useMenu';
+import { Menu } from '~/elements/menu';
+import { MenuItem } from '~/elements/menu-item';
 
 export default component$(() => {
-    const menu = useMenu('user-menu');
+
+    const menu = useMobileMenu();
     return (
         <Menu>
             <MenuItem>Your Profile</MenuItem>

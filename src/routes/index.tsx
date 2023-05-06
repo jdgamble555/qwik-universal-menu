@@ -2,11 +2,11 @@ import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import UserMenu from '~/components/user-menu';
 
-import { useMenu } from '~/hooks/useMenu';
+import { useMobileMenu } from '~/hooks/useMenu';
 
 export default component$(() => {
 
-  const menu = useMenu('user-menu');
+  const menu = useMobileMenu();
 
   return (
     <div class="flex justify-center mt-5">

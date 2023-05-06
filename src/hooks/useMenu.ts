@@ -22,5 +22,5 @@ const _useMenu = () => {
     return menuObj;
 };
 
-export const useMenu = () => useShared(_useMenu, 'menu');
+export const useMobileMenu = () => useShared(_useMenu, 'mobile-menu');
 
