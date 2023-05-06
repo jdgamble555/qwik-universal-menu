@@ -1,30 +1,8 @@
-import type { QRL, Signal } from '@builder.io/qwik';
-import {
-    useContext,
-    useContextProvider,
-    createContextId,
-    $,
-    useSignal
-} from '@builder.io/qwik';
+import { $, useSignal } from '@builder.io/qwik';
 import { useClickOutside } from './useClickOutside';
+import { useShared } from './useShared';
 
-export interface UseMenu {
-    close: QRL<() => void>;
-    open: QRL<() => void>;
-    toggle: QRL<() => void>;
-    isOpen: boolean;
-    ref: Signal<HTMLElement | undefined>;
-}
-
-export const MenuContext = (name: string) =>
-    createContextId<UseMenu>('io.builder.qwik.' + name);
-
-export const useMenu = (name = ''): UseMenu => {
-
-    const _menu = useContext(MenuContext(name), null);
-    if (_menu) {
-        return _menu;
-    }
+const _useMenu = () => {
 
     const menu = useSignal<boolean>(false);
     const menuRef = useSignal<HTMLElement>();
@@ -41,8 +19,8 @@ export const useMenu = (name = ''): UseMenu => {
         ref: menuRef
     };
 
-    useContextProvider(MenuContext(name), menuObj);
-
     return menuObj;
 };
+
+export const useMenu = () => useShared(_useMenu, 'menu');
 
