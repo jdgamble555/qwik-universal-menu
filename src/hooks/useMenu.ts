@@ -2,7 +2,7 @@ import { $, useSignal } from '@builder.io/qwik';
 import { useClickOutside } from './useClickOutside';
 import { useShared } from './useShared';
 
-const _useMenu = () => {
+const useMenu = () => {
 
     const menu = useSignal<boolean>(false);
     const menuRef = useSignal<HTMLElement>();
@@ -22,5 +22,5 @@ const _useMenu = () => {
     return menuObj;
 };
 
-export const useMobileMenu = () => useShared(_useMenu, 'mobile-menu');
+export const useMobileMenu = () => useShared(useMenu, 'mobile-menu');
 

@@ -4,14 +4,15 @@ import {
     useContextProvider
 } from "@builder.io/qwik";
 
-export const sharedContext = <T>(name: string) =>
+const useSharedContext = <T>(name: string) =>
     createContextId<T>('io.builder.qwik.' + name);
 
-export const getShared = <T extends object>(name: string) =>
-    useContext<T, null>(sharedContext(name), null);
+const useGetShared = <T extends object>(name: string) =>
+    useContext<T, null>(useSharedContext(name), null);
 
-export const createShared = <T extends object>(name: string, content: T) =>
-    useContextProvider<T>(sharedContext(name), content);
+const useCreateShared = <T extends object>(name: string, content: T) =>
+    useContextProvider<T>(useSharedContext(name), content);
+
 
 export const useShared = <T extends object>(
     hook: () => T,
@@ -19,13 +20,13 @@ export const useShared = <T extends object>(
 ) => {
 
     // get context if exists
-    const shared = getShared<T>(name);
+    const shared = useGetShared<T>(name);
     if (shared) {
         return shared;
     }
 
     // return new shared context
     const _shared = hook();
-    createShared(name, _shared);
+    useCreateShared(name, _shared);
     return _shared;
 };
