@@ -12,7 +12,7 @@ export default component$(() => {
             <MenuItem>Settings</MenuItem>
             <MenuItem>Logout</MenuItem>
             <MenuItem>
-                <button class="w-full text-left" onClick$={() => menu.toggle()}>
+                <button type="button" class="w-full text-left" onClick$={() => menu.toggle()}>
                     Close
                 </button>
             </MenuItem>
